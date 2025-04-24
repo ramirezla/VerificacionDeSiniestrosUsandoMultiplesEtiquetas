@@ -33,3 +33,14 @@ Sed necesitan mas images con las siguientes clases:
 At least 20-30 samples per class for simple models or initial experiments.
 50-100 samples per class for more robust training and better generalization.
 More samples are always better, especially for deep learning models.
+
+
+
+Pregunta BlackBox:
+Este es el archivo que estoy trabajando para mejorar la Preparacion de los datos:
+PreparacionDeDatosMultiplesEtiquetas_V6.ipynb
+Deseo poder guardar en archivos .csv los datos, por ejemplo:
+data/fotos_siniestros/clasificacion_siniestro_partes_dannos_1145_etiquetas.csv
+data/fotos_siniestros/clasificacion_siniestro_partes_dannos_V6_1145_encoded.csv
+data/fotos_siniestros/clasificacion_siniestro_partes_dannos_V6_1145_etiquetas_encoded.csv
+Me podrias dar el codigo que me lo permita hacer, pero no lo incluyas en mi archivo, indicame el codigo para yo copiarlo e incluirlo.
