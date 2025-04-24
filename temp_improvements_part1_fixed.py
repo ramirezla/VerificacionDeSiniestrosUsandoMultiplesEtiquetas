@@ -1,10 +1,28 @@
-# Advanced Oversampling Integration Example
-
 import numpy as np
 from sklearn.preprocessing import MultiLabelBinarizer
-from temp_improvements_part1 import apply_oversampling
+import pandas as pd
 
-# Assuming multi_consolidado_encoded is already defined and contains the multi-label columns
+# Using smote-variants library for multi-label oversampling
+import smote_variants as sv
+
+def apply_oversampling(X, y, method='MLSMOTE'):
+    """
+    Apply multi-label oversampling using smote-variants.
+    X: feature matrix
+    y: multi-label binary matrix
+    method: 'MLSMOTE' or 'MLADASYN'
+    Returns: resampled X and y
+    """
+    if method == 'MLSMOTE':
+        sampler = sv.ML_SMOTE()
+    elif method == 'MLADASYN':
+        sampler = sv.ML_ADASYN()
+    else:
+        raise ValueError("Unsupported method. Choose 'MLSMOTE' or 'MLADASYN'.")
+    X_resampled, y_resampled = sampler.sample(X, y)
+    return X_resampled, y_resampled
+
+# Example usage with your data:
 
 # Convert multi-label columns to binary indicator matrices
 mlb_parts = MultiLabelBinarizer(classes=sorted(cls_to_label_piezas.values()))
@@ -22,8 +40,8 @@ combined_labels = np.hstack([parts_binary, dannos_binary, sugerencias_binary])
 # Here, as a placeholder, we use the index as features (not ideal, replace with actual features or embeddings)
 X_placeholder = np.arange(len(multi_consolidado_encoded)).reshape(-1, 1)
 
-# Apply oversampling (SMOTE or ADASYN)
-X_resampled, y_resampled = apply_oversampling(X_placeholder, combined_labels, method='SMOTE')
+# Apply oversampling using multi-label method
+X_resampled, y_resampled = apply_oversampling(X_placeholder, combined_labels, method='MLSMOTE')
 
 # After resampling, reconstruct the DataFrame with oversampled labels
 num_parts = parts_binary.shape[1]

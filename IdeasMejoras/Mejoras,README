@@ -1,0 +1,35 @@
+Mejoras
+Miscellaneous:
+
+Add logging of training time and resource usage.
+Consider model ensembling or using more advanced architectures (e.g., EfficientNet).
+Add more detailed error handling in dataset loading.
+
+Sed necesitan mas images con las siguientes clases:
+17: Luz indicadora trasera derecha
+18: Luz indicadora trasera izquierda
+22: Manija derecha
+29: Moldura puerta trasera derecha
+50: Ventanilla delantera izquierda
+30: Moldura puerta trasera izquierda
+51: Ventanilla trasera derecha
+28: Moldura puerta delantera izquierda
+23: Manija izquierda
+27: Moldura puerta delantera derecha
+45: Ventana delantera derecha
+48: Ventana trasera izquierda
+1: Antiniebla delantero derecho
+8: Espejo lateral izquierdo
+24: Marco de la ventana
+46: Ventana delantera izquierda
+7: Espejo lateral derecho
+16: Luz indicadora delantera izquierda
+43: Techo
+47: Ventana trasera derecha
+52: Ventanilla trasera izquierda
+2: Antiniebla delantero izquierdo
+15: Luz indicadora delantera derecha
+
+At least 20-30 samples per class for simple models or initial experiments.
+50-100 samples per class for more robust training and better generalization.
+More samples are always better, especially for deep learning models.
